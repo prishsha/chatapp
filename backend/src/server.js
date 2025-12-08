@@ -1,20 +1,13 @@
 import express from "express";
 import dotenv from "dotenv"
+import authRoutes from "./routes/auth.js"
+import messageRoutes from "./routes/message.js"
 
 const app = express()
 dotenv.config();
 
-app.get("/api/auth/signup", (req, res)=> {
-    res.send("Signup endpoint");
-})
-
-app.get("/api/auth/login", (req,res)=>{
-    res.send("Login endpoint");
-})
-
-app.get("/api/auth/logout", (req, res)=>{
-    res.send("Logout endppint");
-})
+app.use("/api/auth", authRoutes);
+app.use("/api/messages", messageRoutes);
 
 const PORT = process.env.PORT || 3000
 
