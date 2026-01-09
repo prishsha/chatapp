@@ -116,3 +116,7 @@ export const logout = (req, res) =>
         message: "Logged out completely"
     });
 };
+
+export const updateProfile = () => {
+
+};
